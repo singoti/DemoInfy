@@ -5,6 +5,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace DemoInfy
 {
@@ -15,6 +18,9 @@ namespace DemoInfy
 
         protected override void OnCreate(Bundle bundle)
         {
+            MobileCenter.Start("e09d8047-d7a2-48b7-8e62-9c8485b54849",
+                   typeof(Analytics), typeof(Crashes));
+
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
